@@ -49,5 +49,19 @@ export class UserListComponent implements OnInit {
 
   update() {
     this.accion = "Update";
+    this.router.navigate(["/form-user"]);
+  }
+
+  deleteUser(event) {
+    this.dataSource.forEach(item => {
+      let index: number = this.dataSource.findIndex(d => d === item);
+      this.dataSource.splice(index, 1);
+    });
+    const object = this.dataSource.find(data => {
+      return data;
+    });
+    const payload = JSON.stringify(object);
+
+    this.userService.deleteUser(payload);
   }
 }

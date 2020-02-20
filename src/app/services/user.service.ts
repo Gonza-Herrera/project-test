@@ -14,10 +14,22 @@ export class UserService {
   }
 
   createUser(User) {
-    return this.http.post(this.baseUrl + "/api/v1/admins/login", User);
+    return this.http.post(this.baseUrl + "/api/user/createUser", User);
   }
 
   updateUSer(User) {
     return this.http.put(this.baseUrl + "/api/user/updateUser", User);
+  }
+
+  deleteUser(User) {
+    this.http.delete(this.baseUrl + "/api/user/deleteUser", User).subscribe(
+      res => {
+        console.log("res: ", res);
+        //this.dataSource = res;
+      },
+      error => {
+        console.log("error: ", error);
+      }
+    );
   }
 }

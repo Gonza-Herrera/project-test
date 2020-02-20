@@ -10,6 +10,10 @@ import { Router } from "@angular/router";
 })
 export class FormUserComponent implements OnInit {
   @Input("accion") accion: string = "Update";
+  @Input("username") username: string;
+  @Input("name") name: string;
+  @Input("email") email: string;
+  @Input("phone") phone: string;
   createUser: User = { username: "", name: "", email: "", phone: "" };
   constructor(private userService: UserService, private router: Router) {}
 

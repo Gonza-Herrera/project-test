@@ -41,7 +41,12 @@
           >
             Update
           </button>
-          <button class="delete-btn" mat-raised-button color="accent">
+          <button
+            class="delete-btn"
+            mat-raised-button
+            color="accent"
+            (click)="deleteUser($event.target)"
+          >
             Delete
           </button>
         </td>
