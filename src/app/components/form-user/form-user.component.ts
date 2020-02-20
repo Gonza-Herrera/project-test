@@ -15,15 +15,17 @@ export class FormUserComponent implements OnInit {
   @Input("email") email: string;
   @Input("phone") phone: string;
   createUser: User = { username: "", name: "", email: "", phone: "" };
+  isUpdate: boolean = false;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    console.log("this form: ", this);
+    if (this.accion === "Update") {
+      this.isUpdate = true;
+    }
   }
 
   onsubmit() {
     if (this.accion === "Create") {
-      console.log("createUser: ", this.createUser);
       const payload = JSON.stringify(this.createUser);
       this.userService.createUser(payload).subscribe(
         resp => {
