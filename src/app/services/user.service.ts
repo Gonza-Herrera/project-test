@@ -16,4 +16,8 @@ export class UserService {
   createUser(User) {
     return this.http.post(this.baseUrl + "/api/v1/admins/login", User);
   }
+
+  updateUSer(User) {
+    return this.http.put(this.baseUrl + "/api/user/updateUser", User);
+  }
 }

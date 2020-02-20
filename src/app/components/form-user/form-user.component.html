@@ -1,6 +1,6 @@
-<div class="create-user-page">
+<div class="form-user-page">
   <div class="title">
-    <h2>Create User</h2>
+    <h2>{{ accion }} User</h2>
   </div>
   <div class="inputs-wrapper">
     <mat-form-field appearance="fill">
@@ -28,9 +28,9 @@
       class="btn-back"
       mat-raised-button
       color="primary"
-      (click)="onCreateUser()"
+      (click)="onsubmit()"
     >
-      Create
+      {{ accion }}
     </button>
   </div>
 </div>

@@ -22,6 +22,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ["./user-list.component.scss"]
 })
 export class UserListComponent implements OnInit {
+  accion: string = "";
   displayedColumns: string[] = ["username", "name", "email", "phone", "accion"];
   dataUsers: any;
   //dataSource: any = [];
@@ -41,6 +42,12 @@ export class UserListComponent implements OnInit {
   }
 
   onCreateUser() {
-    this.router.navigate(["/create-user"]);
+    this.accion = "Create";
+
+    this.router.navigate(["/form-user"]);
+  }
+
+  update() {
+    this.accion = "Update";
   }
 }

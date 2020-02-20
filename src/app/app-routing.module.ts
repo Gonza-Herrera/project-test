@@ -6,15 +6,15 @@ import { MatTableModule } from "@angular/material/table";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from "@angular/forms";
-import { CreateUserComponent } from "./components/create-user/create-user.component";
+import { FormUserComponent } from "./components/form-user/form-user.component";
 
 const routes: Routes = [
   { path: "", component: UserListComponent },
-  { path: "create-user", component: CreateUserComponent }
+  { path: "form-user", component: FormUserComponent }
 ];
 
 @NgModule({
-  declarations: [UserListComponent, CreateUserComponent],
+  declarations: [UserListComponent, FormUserComponent],
   imports: [
     RouterModule.forRoot(routes),
     MatButtonModule,
