@@ -12,4 +12,8 @@ export class UserService {
   getAllUsers() {
     return this.http.get(this.baseUrl + "/api/user/getallusers");
   }
+
+  createUser(User) {
+    return this.http.post(this.baseUrl + "/api/v1/admins/login", User);
+  }
 }

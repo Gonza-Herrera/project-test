@@ -1,3 +1,36 @@
 <div class="create-user-page">
-  <p>create user page test</p>
+  <div class="title">
+    <h2>Create User</h2>
+  </div>
+  <div class="inputs-wrapper">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="createUser.username" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="createUser.name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="createUser.email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="createUser.phone" />
+    </mat-form-field>
+  </div>
+  <div>
+    <button class="btn-back" mat-raised-button color="primary" (click)="back()">
+      Back
+    </button>
+    <button
+      class="btn-back"
+      mat-raised-button
+      color="primary"
+      (click)="onCreateUser()"
+    >
+      Create
+    </button>
+  </div>
 </div>
