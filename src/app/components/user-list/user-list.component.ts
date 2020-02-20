@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "../../services/user.service";
+import { User } from "../../models/user";
+import { Router } from "@angular/router";
 
 export interface PeriodicElement {
   name: string;
@@ -20,8 +23,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class UserListComponent implements OnInit {
   displayedColumns: string[] = ["username", "name", "email", "phone", "accion"];
+  dataUsers: any;
+  //dataSource: any = [];
   dataSource = ELEMENT_DATA;
-  constructor() {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userService.getAllUsers().subscribe(
+      res => {
+        console.log("res: ", res);
+        //this.dataSource = res;
+      },
+      error => {
+        console.log("error: ", error);
+      }
+    );
+  }
+
+  onCreateUser() {
+    this.router.navigate(["/create-user"]);
+  }
 }
