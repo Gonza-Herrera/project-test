@@ -14,7 +14,7 @@ export class FormUserComponent implements OnInit {
   @Input("name") name: string;
   @Input("email") email: string;
   @Input("phone") phone: string;
-  createUser: User = { username: "", name: "", email: "", phone: "" };
+  createUser: User = { "username": "", "name": "", "email": "", "phone": "" };
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
